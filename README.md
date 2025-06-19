@@ -22,7 +22,7 @@ A low-level image processing tool written in C that applies a sharpening filter 
 
 | Before | After |
 |--------|-------|
-| ![original](./assets/before.png) | ![sharpened](./assets/after.png) |
+| ![original](./preview/before.png) | ![sharpened](./preview/after.png) |
 
 > Preview images are for demonstration. PPM format is used in the actual pipeline.
 
