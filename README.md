@@ -8,15 +8,11 @@ A low-level image processing tool written in C that applies a sharpening filter 
 
 - Reads an image in **PPM (P6)** binary format
 - Applies a **sharpening kernel** to enhance edges and details:
-  
+```markdown
 [ 0 -1 0 ]
 [ -1 5 -1 ]
 [ 0 -1 0 ]
-
-yaml
-Copy
-Edit
-
+```
 - Preserves image edges without distortion
 - Computes and writes a **grayscale brightness histogram** of the processed image
 
@@ -45,13 +41,13 @@ This will generate:
 ## 📊 Histogram Details
 
 The histogram is divided into 5 brightness ranges:
-
-Range (0–255)	Bucket
-0–50	0
-51–101	1
-102–152	2
-153–203	3
-204–255	4
+| Brightness Range | Bucket |
+|------------------|--------|
+| 0–50             | 0      |
+| 51–101           | 1      |
+| 102–152          | 2      |
+| 153–203          | 3      |
+| 204–255          | 4      |
 
 Y-brightness is computed via:
 
@@ -68,13 +64,13 @@ Y = 0.2126 * R + 0.7152 * G + 0.0722 * B
 
 ## 🧠 Why C? Why PPM?
 
-- This project was written from scratch to deepen understanding of:
+This project was written from scratch to deepen understanding of:
 - Raw memory and pointer-based image manipulation
 - Manual convolution and filter design
 - Binary file I/O and image encoding
 - Low-level performance and control in systems programming
 
-##📦 Possible Extensions
+## 📦 Possible Extensions
 
 - Support for multiple  lters (blur, edge-detect, emboss)
 - Add CLI flags for filter selection
@@ -94,9 +90,15 @@ If you want to learn how images work under the hood, this repo is a good place t
 
 ## 📁 Files
 ``` bash
+├── assets/                # Before/after images for README preview
+│   ├── before.png
+│   └── after.png
+├── preview/               # Responsive html before/after comparison
+│   └── index.html
 ├── sharpen.c          # Main logic for I/O, convolution, and histogram
 ├── output.ppm         # Result image (after sharpening)
 ├── output.txt         # Histogram data
+├── LICENSE.txt
 └── README.md          # You're here
 ```
 
