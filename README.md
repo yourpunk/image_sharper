@@ -56,11 +56,11 @@ Y = 0.2126 * R + 0.7152 * G + 0.0722 * B
 ```
 
 ## 🛠 Features
-✅ Manual RGB pixel handling
-✅ Sharpen filter via 3x3 convolution
-✅ Histogram generation
-✅ Edge-safe processing
-✅ Minimal dependencies — standard C only
+✅ Manual RGB pixel handling  
+✅ Sharpen filter via 3x3 convolution  
+✅ Histogram generation  
+✅ Edge-safe processing  
+✅ Minimal dependencies — standard C only  
 
 ## 🧠 Why C? Why PPM?
 
