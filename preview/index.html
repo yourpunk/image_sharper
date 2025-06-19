@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Image Comparison — Sharpen Filter</title>
+  <style>
+    body {
+      margin: 0;
+      background: #121212;
+      color: #fff;
+      font-family: sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem;
+    }
+
+    h1 {
+      margin-bottom: 2rem;
+      font-size: 1.5rem;
+    }
+
+    .container {
+      position: relative;
+      width: 90%;
+      max-width: 800px;
+    }
+
+    .img-wrapper {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .img-wrapper img {
+      display: block;
+      width: 100%;
+      height: auto;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transition: 0.1s ease;
+    }
+
+    .img-wrapper img.after {
+      clip-path: inset(0 0 0 50%);
+    }
+
+    input[type=range] {
+      width: 100%;
+      margin-top: 1rem;
+    }
+
+    .labels {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.9rem;
+      margin-top: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>🔍 Sharpen Filter Comparison</h1>
+
+  <div class="container">
+    <div class="img-wrapper">
+      <img src="before.png" alt="Original Image" class="before">
+      <img src="after.png" alt="Sharpened Image" class="after" id="afterImage">
+    </div>
+
+    <input type="range" min="0" max="100" value="50" id="slider">
+    <div class="labels">
+      <span>Original</span>
+      <span>Sharpened</span>
+    </div>
+  </div>
+
+  <script>
+    const slider = document.getElementById('slider');
+    const afterImage = document.getElementById('afterImage');
+
+    slider.addEventListener('input', () => {
+      afterImage.style.clipPath = `inset(0 ${100 - slider.value}% 0 0)`;
+    });
+  </script>
+</body>
+</html>
